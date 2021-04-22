@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" type="image/x-icon">  
+    <title>JRM | Admin</title>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+</head>
+<style>
+  *{
+    font-family: 'Poppins', sans-serif;
+  }
+  .nav-item{float:right;right: 0px;}
+  .my-icon{float: right;margin: 0px 10px 0px 10px;}
+    #gal_img,.gal_img{
+    height:10em;
+    width: 20em;
+    margin: 7px;
+  }
+  .chkbut{padding:4px;}
+  .my-btn{margin: 10px;}
+.fixed{
+  display: block;
+  position: fixed;
+  z-index: 99;
+  margin-top: 4em;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+}
+@media only screen and (max-width: 800px) {
+  .collapse ul{background-color: white;width: 100%;}
+  /* .nav-item{background-color:black;} */
+  .nav-link h4{color:black;margin-left: 1em;}
+  }
+.card{margin-top: 0px;margin-bottom: 0px;}
+.dp{
+  width: auto;
+  height: inherit;
+  border-radius: 100%;
+  position: relative;
+  padding-bottom: 8px;
+  float: right;
+  padding-top: 3px;
+}
+#naam{margin-right: 2em;margin-left: .5em;}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:#343A40;
+  color: white;
+  text-align: left;
+}
+.footer p{
+  margin: 5px;
+  vertical-align: middle;
+}
+.footer a{
+  color:white;
+}
+.footer a:hover{
+color:grey;
+}
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#"><h3>JRM Admin</h3></a>
+        
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"><h4>Home</h4> <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="admin_add.html"><h4>Add</h4></a>
+            </li>
+          </ul>
+        </div>
+         <img class="dp" src="https://i1.sndcdn.com/artworks-000421555080-up93x9-t500x500.jpg">
+         <button style="background-color: #343A40;float: right;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+      <div class="fixed" onkeyup="tagit(event)">
+        <span id="khaali">All tags : </span><div class="chips chips-initial">
+          </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    <div class="accordion" id="accordionExample">
+    </div>
+    <br><br>
+    <div class="footer">
+  <p>Designed & Developed by <strong><a href="https://instagram.com/contrivers_512?igshid=196g7fuo2qb7x">CONTRIVERS</a></strong> <a href="https://wa.me/message/VKCHPDT6E5XHJ1" style="float: right; margin-right: 1em;">Help!</a></p>
+</div>
+</body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+  apiKey: "AIzaSyD3auQ41Km3UsUmRu4zWBYv5utzsUnnmsU",
+  authDomain: "jrm-f76c0.firebaseapp.com",
+  databaseURL: "https://jrm-f76c0.firebaseio.com",
+  projectId: "jrm-f76c0",
+  storageBucket: "jrm-f76c0.appspot.com",
+  messagingSenderId: "841897250102",
+  appId: "1:841897250102:web:4a798b6b46070fb24c7797",
+  measurementId: "G-LM7N71TR9F"
+};
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  var db = firebase.firestore();
+  db.settings({timestampsInSnapshots:true})
+</script>
+<script src="app.js"></script>
+<script src="extra.js"></script>
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.chips');
+    var instances = M.Chips.init(elems, options);
+  });
+  $('.chips').chips();
+</script>
+</html>

@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+  }
+  .blog-card {
+    margin: 2rem;
+    display: -webkit-box;
+    display: flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    margin: 1rem auto;
+    box-shadow: 0 3px 7px -1px rgba(0, 0, 0, .8);
+    margin-bottom: 1.6%;
+    background-color: rgba(255,255,255,.45);
+    line-height: 2;
+    font-family: sans-serif;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 0;
+  }
+  .blog-card .meta {
+    position: relative;
+    z-index: 0;
+    height: 150px;
+  }
+  .blog-card .photo {
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: a;
+    background-position: center;
+  }
+  
+  .blog-card .description {
+    padding: 1rem;
+    background-color: rgba(255,255,255,.45);
+    position: relative;
+    z-index: 1;
+  }
+  .blog-card .description h1 {
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+  }
+  .blog-card .description h1 {
+    line-height: 1;
+    margin: 0;
+    font-size: 1.7em;
+  }
+  .blog-card p {
+    position: relative;
+    margin: 1rem 0 0;
+    font-size: 1em;
+  }
+  .blog-card p:first-of-type {
+    margin-top: 1.25rem;
+  }
+  .blog-card p:first-of-type:before {
+    content: "";
+    position: absolute;
+    height: 5px;
+    background:#414949;
+    width: 35px;
+    top: -0.75rem;
+    border-radius: 3px;
+  }
+  @media only screen and (max-width:450px){
+    .blog-card{
+      transform: scale(0.9);
+    }
+
+  }
+  @media (min-width: 640px) {
+    .blog-card {
+      flex-direction: row;
+      max-width: 800px;
+    }
+    .blog-card .meta {
+      flex-basis: 40%;
+      height: 280px;
+    }
+    .blog-card .description {
+      flex-basis: 60%;
+    }
+    .blog-card .description:before {
+      content: "";
+      background-color: rgba(255,255,255,0);
+      width: 30px;
+      position: absolute;
+      left: -10px;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    .blog-card.alt {
+      -webkit-box-direction: reverse;
+              flex-direction: row-reverse;
+    }
+    .blog-card.alt .description:before {
+      left: inherit;
+      right: -10px;
+    }
+    
+  }

@@ -1,0 +1,196 @@
+.requirements {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    padding: 30px;
+    background-color: rgba(255, 244, 225,0.3);;
+  }
+  
+  .dabba {
+    width: 100%;
+    -webkit-box-pack: start;
+            justify-content: flex-start;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-flow: row wrap;
+  }
+  
+  .product{
+    width: 150;
+    height: auto;
+    border-radius: 3px;
+    padding: 1em;
+    margin: 1em;
+    transform: scale(0.8);
+    /* background-color: #242121; */
+    overflow: hidden;
+    position: relative;
+    -webkit-box-flex: 1;
+            flex: auto;
+  }
+  @media only screen and (max-width: 500px) {
+.product {
+        margin: 0em auto 0em auto;   
+}
+  }
+  .product img{
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+  }
+  .product .product_inner {
+    display: -webkit-box;
+    display: flex;
+    text-align: center;
+    padding: 15px;
+    margin: 0.1em auto 0.1em auto;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border: solid 1px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    -webkit-box-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-flow: column wrap;
+  }
+  .service{
+        width: 15em;
+        height: fit-content;
+        border-radius: 3px;
+        padding: 1em;
+        margin: 1em;
+        background-color: rgba(0, 0, 0, 0.05);
+        /* overflow: hidden; */
+        position: relative;
+        border: solid 1px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        -webkit-box-flex: 1;
+                flex: auto;
+  }
+  .service .product_inner{
+          padding: 8px;
+          color: black;
+  }
+  .service .product_inner li{
+          font-weight: 400;
+  }
+  /* .service .product_inner u{
+          letter-spacing: 1.5px;
+  } */
+  .service img{
+        max-width: 100%;
+        height: auto;
+      }
+.requirements h1{
+        text-align: center;
+        position: relative;
+        letter-spacing: 0.1em;
+}
+.requirements .about{
+        text-align: center;
+        position: relative;
+        font-size: larger;
+}
+.dabba h4{
+        text-align: center;
+}
+.service .product_inner ol{
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: center;
+                align-items: left;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+                flex-flow: column wrap;
+      }
+.service .product_inner ol>li{padding-top: 10px;}
+.about{
+        padding-left: 5em;
+        padding-right: 5em;
+}
+.about .author{
+        font-size: 1.4em;
+}
+.about p{
+        margin-top: 0.8em;
+        font-size: 1.2em;
+}
+.about{
+        text-align: center;
+        position: relative;
+        width: 100%;
+        display: block;
+        color: rgb(228, 228, 228);
+}
+blockquote {
+        border-left: none;
+        margin: 0;
+        font-size: 2rem;
+        /* float: left; */
+        /* margin-top: 3em; */
+    }
+    blockquote p:before {
+        content: "\f10d";
+        font-family: 'Fontawesome';
+        float: left;
+        margin-right: 10px;
+    }
+.contactbar{
+        background-color: #242121;
+	color: #ffffff;
+	height: auto;
+        width: 100%;
+        overflow: hidden;
+        justify-content: center;
+}
+.contactbar .contact-text{
+        /* text-align: center; */
+        /* padding:0px 10px 0px 50px; */
+        text-align: center;
+        font-size: 1.3em;
+        float: left;
+        width: 100%;
+        padding: 10px 7px 7px 7px;
+        /* padding-top: 8px; */
+        height: 100%;
+}
+.contactbar .contacts{
+        float: left;
+        text-align: center;
+        height: 100%;
+        padding-top: 8px;
+        /* padding-bottom: auto; */
+        /* margin: 0px 5px 0px 5px; */
+        /* padding-right: 30px; */
+}
+.contactbar .contacts a{
+        height: 40px;
+        width: 40px;
+        height: fit-content;
+}
+.contactbar img
+{
+        margin: 3px 7px 3px 7px;
+        height: 36px;
+        width: 36px;
+        border-radius: 100%;
+        /* margin-left: 10px; */
+        /* margin-right: 10px; */
+}
+.mapouter{margin: 0px;padding: 0px;
+        height:275px;
+        width:100%;}
+.mapouter iframe{
+        position:relative;
+        /* height:270px; */
+        /* width:100%; */
+}
+.dabba h3{
+        font-weight: bold;
+}

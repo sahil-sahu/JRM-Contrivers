@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" type="image/x-icon">  
+    <title>JRM | Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+</head>
+<style>
+  *{
+    font-family: 'Poppins', sans-serif;
+  }
+  .gal_img{
+    height:10em;
+    width: 20em;
+    margin: 7px;
+  }
+  @media only screen and (max-width: 800px) {
+  .collapse ul{background-color: white;width: 100%;}
+  /* .nav-item{background-color:black;} */
+  .nav-link h4{color:black;margin-left: 1em;}
+  }
+  .dp{
+  width: auto;
+  height: 4em;
+  border-radius: 100%;
+}
+#naam{margin-right: 2em;margin-left: .5em;}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:#343A40;
+  color: white;
+  text-align: left;
+}
+.footer p{
+  margin: 5px;
+  vertical-align: middle;
+}
+.footer a{
+  color:white;
+}
+.footer a:hover{
+color:grey;
+}
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html"><h3>JRM Admin</h3></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="admin_read.html"><h4>Home</h4><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#"><h4>Add</h4></a>
+            </li>
+          </ul>
+        </div>
+        <img class="dp" src="https://i1.sndcdn.com/artworks-000421555080-up93x9-t500x500.jpg">
+    </nav>
+    <br><br><br><br>
+    <form action="" class="container">
+      <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" id="Name">
+      </div>
+      <div class="form-group">
+        <label for="descrip">Description</label>
+        <textarea class="form-control" name="" id="descrip" cols="1" rows="6"></textarea>
+      </div>
+      <p>
+        <label>
+          <input type="checkbox" id="esteem"/>
+          <span>Esteemed Client</span>
+        </label>
+      </p>
+      <br>
+      <div class="form-group">
+      <label class="form-check-label">Tags :</label>
+        <div class="chips chips-autocomplete"></div>
+      </div>
+      <div class="form-group">
+        <label for="cover">Cover Photo</label>
+        <input type="file" class="form-control-file" id="cover"><h5 id="cc"><span></span></h5>
+        <img class="changeit" src="no-photo.png" style="width: 300px;height: 150px;">
+        <input type="hidden" name="" id="coverlink" value="">
+      </div>
+      <div class="form-group" >
+        <h3>Gallery</h3>
+        <input type="file" class="form-control-file" id="m_img" multiple><h5 id="gal_c"><span></span></h5>
+        <div class="gallery" style="overflow: auto; height: 300px;width: 100%;"></div>
+      </div>
+      <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+    <br>
+    <br>
+<div class="footer">
+  <p>Designed & Developed by <strong><a href="https://instagram.com/contrivers_512?igshid=196g7fuo2qb7x">CONTRIVERS</a></strong><a href="https://wa.me/message/VKCHPDT6E5XHJ1" style="float: right; margin-right: 1em;">Help!</a></p>
+</div>
+</body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+  apiKey: "AIzaSyD3auQ41Km3UsUmRu4zWBYv5utzsUnnmsU",
+  authDomain: "jrm-f76c0.firebaseapp.com",
+  databaseURL: "https://jrm-f76c0.firebaseio.com",
+  projectId: "jrm-f76c0",
+  storageBucket: "jrm-f76c0.appspot.com",
+  messagingSenderId: "841897250102",
+  appId: "1:841897250102:web:4a798b6b46070fb24c7797",
+  measurementId: "G-LM7N71TR9F"
+};
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  var db = firebase.firestore();
+  // db.settings({timestampsInSnapshots:true})
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" integrity="sha512-NiWqa2rceHnN3Z5j6mSAvbwwg3tiwVNxiAQaaSMSXnRRDh5C2mk/+sKQRw8qjV1vN4nf8iK2a0b048PnHbyx+Q==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.chips');
+    var instances = M.Chips.init(elems, options);
+  });
+
+  // Or with jQuery
+var st_alltags = [];
+db.collection("mediatags").get().then(function(querySnapshot) 
+  { st_alltags = [];
+    querySnapshot.forEach(function(doc) 
+    { 
+      st_alltags.push(doc.id); }
+    );
+    completeit()
+});    
+function completeit(){
+  let dictauto = {}
+  $('.chips').chips();
+  st_alltags.forEach(ele =>{
+    dictauto[ele]=null;
+  })
+  $('.chips-autocomplete').chips({
+    autocompleteOptions: {
+      data: dictauto,
+      limit: Infinity,
+      minLength: 1
+    }
+});
+}
+</script>
+<script src="app.js"></script>
+<script src="extra.js"></script>
+</html>

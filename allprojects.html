@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">  
+    <title>JRM | Creative & Innovative Designers</title>
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="bootstrap-4.5.3-dist/css/bootstrap.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Unlock&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/studio.css">
+    <link rel="stylesheet" href="css/service.css">
+    <link rel="stylesheet" href="css/tiles.css">
+    <link rel="stylesheet" href="css/text.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="allproj.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- kjhj -->
+<!-- oggy -->
+  <!-- Navbar -->
+  <nav>
+    <div class="navbar-fixed">
+      <a href="/" class="brand-logo">JRM</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+        <div class="ham"></div>
+        <div class="ham"></div>
+        <div class="ham"></div>
+      </a>
+      <div id="sidenav-overlay" style="display:none;"></div>
+      <ul class="right popmar hide-on-med-and-down">
+        <li><a class="popys" href="/">Home</a></li>
+        <li id="hoverit"><a class="popys drp">Categories</a></li>
+        <li><a class="popys" href="#tofooter">Contact us</a></li>
+      </ul>
+    </div>
+  </nav>
+  <nav style="margin-top: 4.25em;">
+    <div class="navbar-fixed">
+      <ul class="right popmar hide-on-med-and-down" id="bigapp">
+        <li><a style="color:#2f3536;" onclick="showall()">All</a></li>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a class="popy" href="/">Home</a></li>
+    <li><a class="popy sidenav-close" href="#tofooter">Contact us</a></li>
+    <li><a class="popy">Categories</a>
+      <ul class="subnav" id="smallapp">
+        <li class="sidenav-close"><a onclick="showall()">All</a></li>
+      </ul>
+    </li>
+  </ul>
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="d-block w-100"><img class="caro-img" src="https://firebasestorage.googleapis.com/v0/b/jrm-f76c0.appspot.com/o/media%2Fjoshua-ness-Vo52cKzOxMY-unsplash.jpg?alt=media&token=6d6efcb0-8e92-4bd8-952d-405cc13f0113" alt=""></div>
+        <div class="carousel-caption d-none d-md-block">
+          <div class="dabba"><h3>DN Oxy Homes <br>(Bhubaneswar)</h3></div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="d-block w-100"><img class="caro-img" src="https://firebasestorage.googleapis.com/v0/b/jrm-f76c0.appspot.com/o/media%2Fluke-van-zyl-koH7IVuwRLw-unsplash.jpg?alt=media&token=821bfa7f-6c17-4b32-8081-089ea4c036d3" class="d-block w-100" alt="..."></div>
+        <div class="carousel-caption d-none d-md-block">
+          <div class="dabba"><h3>Cosmopolis <br>(Bhubaneswar)</h3></div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="d-block w-100"><img class="caro-img" src="https://firebasestorage.googleapis.com/v0/b/jrm-f76c0.appspot.com/o/media%2Fpexels-joey-342800.jpg?alt=media&token=730680ca-76ca-42ca-8cb0-ea0f0b4b7b54" class="d-block w-100" alt="..."></div>
+        <div class="carousel-caption d-none d-md-block">
+          <div class="dabba"><h3>Tata Arenia <br>(Bhubaneswar)</h3></div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <div class="show-design">
+    <h3 class="underline-b" id="heading"  style="width: 10em;color: black;">OUR PROJECTS</h3>
+    <div class="my-gallery">
+    </div>
+  </div>    
+
+  <div class="parallax-container" style="height: auto;">
+    <div class="parallax"><img style="width: 100%;filter: brightness(10%);" src="https://firebasestorage.googleapis.com/v0/b/jrm-f76c0.appspot.com/o/media%2Falex-wong-l5Tzv1alcps-unsplash.jpg?alt=media&token=1fa95e12-bab6-4aad-bcfa-98be22c09655"></div>
+  <!-- footer starts -->
+    <footer class="site-footer" id="tofooter">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-9 col-md-9" id="tab-about">
+            <h2>About</h2>
+            <p class="text-justify">JRMBuildingSolutions is a group of architects, designers and thinkers who value the transformative role of ideas and the capacity for architecture to inspire. Here we are actively engaged in the creation of contextually appropriate solutions within an increasingly changing world. It is a design studio focusing primarily on the fields of Architecture, Interior Design and Landscaping. The studio provides a comprehensive design service encompassing all elements of the designing process, from meticulously detailed and crafted bespoke furniture and interior design, to larger scale projects including extension and refurbishment projects as well as new builds. An energetic team of in-house architects works intensively with engineers, consultants, designers and the client, welcoming new insights that can lead to specific innovative solutions. Our team is dedicated to unique design approaches adapted to each project, and achieving a balance between functionality & aesthetics, context, climate.</p>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <h2>Quick Links</h2>
+            <ul class="footer-links">
+              <li><a href="allprojects.html">PROJECTS</a></li>
+              <li><a href="#">SERVICES</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12 justifycontent-center">
+            <p>Copyright &copy;2020 All rights reserved | is made by 
+              <a class="contrivers" href="https://instagram.com/contrivers_512?igshid=196g7fuo2qb7x">CONTRIVERS</a>
+            </p>
+          </div>
+          
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <a class="facebook" href="#"><img src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-facebook-circle-128.png"></a>
+              <a class="linkedin" href="#"><img src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-linkedin-circle-128.png"></a>
+              <a class="instagram" href="#"><img src="https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_instagram-128.png"></a>
+              <a class="twitter" href="#"><img src="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/twitter_circle-128.png"></a>
+              <a class="telegram" href="#"><img src="https://cdn3.iconfinder.com/data/icons/social-icons-33/512/Telegram-128.png"></a>
+              <a class="whatsapp" href="#"><img src="https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo-whatsapp-128.png"></a>
+              <a class="mail" href="#"><img src="https://cdn2.iconfinder.com/data/icons/social-icons-circular-color/512/gmail-128.png"></a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  <!-- footer ends -->
+</div>   
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.0.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/8.0.2/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" integrity="sha512-NiWqa2rceHnN3Z5j6mSAvbwwg3tiwVNxiAQaaSMSXnRRDh5C2mk/+sKQRw8qjV1vN4nf8iK2a0b048PnHbyx+Q==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="js/allproj.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+<script src="js/showproj.js"></script>
+<script>
+</script>
+</html>

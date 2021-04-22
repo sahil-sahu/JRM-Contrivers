@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
+.bodo{
+  background-image: url("images/alex-wong-l5Tzv1alcps-unsplash.jpg");
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-size: 100% auto;
+}
+.bodi{background-color: rgba(0, 0, 0, 0.6);overflow-x: hidden;}
+.cover{
+  height: auto;
+  width: 100%;
+}
+.cov-capt{
+  height: auto;
+  display: inline-block;
+  color: white;
+  text-align: center;
+}
+.cap-desc{
+  margin:1.4em 1.8em 1.4em 1.8em;
+  font-size: 1.18em;
+  line-height: 2em;
+  align-items: center;
+  text-align: center;
+}
+.cov-pic{
+  height: auto;
+  /* display: table-cell; */
+  float:right;
+}
+.cap-pic{
+  max-width: 95%;
+  display: block;
+  vertical-align: middle;
+  /* align-items: center; */
+  margin:4em auto 1.8em auto;
+}
+.card-zipper{height: 230px;}
+/* .activator{
+  width: 334px;
+  height:250px;
+} */
+.card,.activator{width: 350px;height: 200px;}
+.zoomer{
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  display: none;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  vertical-align: middle;
+  text-align: center;
+  align-content: center;
+}
+.show-design{background-color: rgba(0,0,0,0);}
+.zmed-pic{
+  max-width: 75%;
+  max-height: 75%;
+  /* transform: translateY(60%); */
+  /* top: 100%; */
+  display: block;
+  align-self: center;
+  padding: auto;
+  margin: 5em auto 0px auto;
+}
+.zm-close{
+  /* align-self: center; */
+  float: right;
+  padding-right:4em;
+  padding-top:3em;
+  transition: 0.4s;
+  width: 2.4em;
+  height: 2.4em;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.cls{
+  background-color: white;
+  width: 1.6em;
+  height: 3px;
+  position: relative;
+  /* display: block; */
+}
+.cls:nth-child(1){
+  transform: rotateZ(45deg);
+}
+.cls:nth-child(2){
+  transform:translateY(-3px) rotateZ(-45deg);
+}
+::-webkit-scrollbar{
+  display:none;
+}
+.footer{
+  background-color: rgba(0, 0, 0, 0.65);
+}
