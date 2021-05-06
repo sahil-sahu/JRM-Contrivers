@@ -6,11 +6,14 @@
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: 700;
     padding: 30px;
+    overflow: hidden;
     background-color: rgba(255, 244, 225,0.3);;
   }
   
   .dabba {
     width: 100%;
+    max-width: 120em;
+    margin: auto;
     -webkit-box-pack: start;
             justify-content: flex-start;
     display: -webkit-box;
@@ -113,6 +116,8 @@
 .about{
         padding-left: 5em;
         padding-right: 5em;
+        margin: auto;
+        max-width: 100em;
 }
 .about .author{
         font-size: 1.4em;
@@ -193,4 +198,25 @@ blockquote {
 }
 .dabba h3{
         font-weight: bold;
+}
+@keyframes idhar {
+   from{opacity: 0;transform: translateY(-100vh) scale(0); }
+    to{opacity: 1;transform:  translateY(0vh) scale(1);}
+}
+
+@keyframes udhar {
+   from{opacity: 0;transform: translateY(100vh) scale(0); }
+    to{opacity: 1;transform:  translateY(0vh) scale(1);}
+}
+
+#idhar,#udhar{
+    overflow: hidden;
+    visibility: hidden;
+}
+
+#wtcu{
+        margin-bottom: 5em;
+        background-color: blue;
+        content: "";
+        visibility: hidden;
 }

@@ -1,4 +1,10 @@
-$(".carousel-item").css({"height":screen.availHeight*0.65.toString()+'px' })
+// $(".carousel-item").css({"height":screen.availHeight*0.65.toString()+'px' })
+// $(document).ready(function(){
+//     $('.carousel').carousel();
+//   });
+$(document).ready(function(){
+    $('.slider').slider();
+  });
 $(".dropdown-trigger").dropdown();
 $(document).ready(function(){
     $('.sidenav').sidenav();

@@ -20,9 +20,22 @@ db.collection("projects").where("esteemed","==",false).where("showit","==",true)
     snapshot.docs.forEach((doc) =>{
         renderdata(doc);
         })
-    showthat();    
+    showthat();
+    $(".gallery-pics:nth-child(4)").waypoint({
+      handler: function (direction) {
+        var active = $(this);
+        if (direction == "up") active = active.prev();
+        $(".card-zipper").css({"animation-name": "ubhar",
+                        "animation-duration": "2s",
+                        "animation-iteration-count": "1",
+                        "transition-timing-function": "ease-in-out",
+                        "visibility":"visible"});
+      },
+      offset: "0%"
+    });
     })
 }
+
 
 function showthat() {
     $(".my-gallery").hover(function(){
@@ -61,7 +74,7 @@ function read_esteem() {
 }
   
   
-db.collection("projects").where("esteemed","==",true).orderBy("name","asc").get().then((snapshot) => {
+db.collection("projects").where("esteemed","==",true).orderBy("name","asc").limit(8).get().then((snapshot) => {
     snapshot.docs.forEach((doc) =>{
         renderdat(doc);
         })

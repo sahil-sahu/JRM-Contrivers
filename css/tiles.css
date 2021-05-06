@@ -5,7 +5,7 @@
   padding: 0;
   box-sizing: inherit; 
 } */
-
+.gallery-note p{text-align: center;}
 .tile {
   margin: 1rem auto;
   line-height: 1;

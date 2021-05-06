@@ -6,7 +6,9 @@
   $(document).ready(function(){
     $('.parallax').parallax();
   });
-
+$(document).ready(function(){
+    $('.slider').slider();
+  });
 window.onscroll = function() {scrollFunction()};
 var new_nav=`
 <style>
@@ -56,7 +58,7 @@ nav .brand-logo{
 }
 nav{
   background-color: rgba(255, 255, 255, 0);
-  margin-top: 1.2em;
+  margin-top: 2em;
 }
 .popys{
     border-bottom: white 2px solid;
@@ -69,10 +71,27 @@ nav{
 `
 function scrollFunction() {
   if (document.body.scrollTop > screen.availHeight*0.75|| document.documentElement.scrollTop > screen.availHeight*0.75) {
-    $("nav").append(new_nav);
-  }
+
+      if ($(".nav-ani").attr("id") == "old-1"){
+
+        $(".nav-ani").empty();
+        $(".nav-ani").append(new_nav);
+        $(".nav-ani").attr("id","new-1");
+        $(".contact_bar").css("display","none");
+
+      }
+
+        
+      }
   else {
-    $("nav").append(old_nav);
+    if ($(".nav-ani").attr("id") == "new-1"){
+
+        $(".nav-ani").empty();
+        $(".nav-ani").append(old_nav);
+        $(".nav-ani").attr("id","old-1");
+        $(".contact_bar").css("display","block");
+      }
+    
   }
 }
 
@@ -161,3 +180,44 @@ var fadeOut = `
 }
 </style>
 `
+
+$("document").ready(function () {
+
+     $('.caption').waypoint({
+    handler: function (direction) {
+      var active = $(this);
+      if (direction == "up") active = active.prev();
+      $(".m-container").css({"animation-name": "upar_se",
+                      "animation-duration": "1.3s",
+                      "animation-iteration-count": "1",
+                      "transition-timing-function": "ease-in-out",
+                      "visibility":"visible"});
+    },
+    offset: "0%"
+  });
+
+  $('.collector h3').waypoint({
+    handler: function (direction) {
+      var active = $(this);
+      if (direction == "up") active = active.prev();
+      $("#idhar").css({"animation-name": "idhar",
+                      "animation-duration": "1.5s",
+                      "animation-iteration-count": "1",
+                      "transition-timing-function": "ease-in-out",
+                      "visibility":"visible"});
+    },
+    offset: "15%"
+  });
+  $('#idhar').waypoint({
+    handler: function (direction) {
+      var active = $(this);
+      if (direction == "up") active = active.prev();
+      $("#udhar").css({"animation-name": "udhar",
+                      "animation-duration": "1.5s",
+                      "animation-iteration-count": "1",
+                      "transition-timing-function": "ease-in-out",
+                      "visibility":"visible"});
+    },
+    offset: "0%"
+  });
+});

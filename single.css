@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
 .bodo{
-  background-image: url("images/alex-wong-l5Tzv1alcps-unsplash.jpg");
+  background-image: url("images/singlebg.jpeg");
   background-repeat: repeat;
   background-attachment: fixed;
   background-size: 100% auto;
@@ -35,7 +35,7 @@
   /* align-items: center; */
   margin:4em auto 1.8em auto;
 }
-.card-zipper{height: 230px;}
+.card-zipper{height: 230px;visibility: visible;}
 /* .activator{
   width: 334px;
   height:250px;

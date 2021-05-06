@@ -25,7 +25,7 @@ function capitalizeFirstLetter(string) {
 }  
 function navlink(){
 	st_alltags.forEach(ele =>{
-		let li = `<li class="sidenav-close"><a style="color:#2f3536;" onclick=sortby('`+ele.replace(/ /g,'_')+`')>`+capitalizeFirstLetter(ele)+`</a></li>`
+		let li = `<li class="sidenav-close"><a style="color:#2f3536;" href="#heading" onclick=sortby('`+ele.replace(/ /g,'_')+`')>`+capitalizeFirstLetter(ele)+`</a></li>`
 		$("#bigapp").append(li);
 		$("#smallapp").append(li);
 	})
